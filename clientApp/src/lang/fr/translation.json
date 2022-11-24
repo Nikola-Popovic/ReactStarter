@@ -1,7 +1,7 @@
 {
     "appBar": {
-        "altTitle": "React Starter",
-        "title": "React Starter",
+        "altTitle": "Amorceur React",
+        "title": "Amorceur React",
         "subtitle": "par Nikola Popovic "
     },
     "general": {
@@ -12,6 +12,12 @@
         "update": "Modifier"
     },
     "homepage": {
-        "title": "This is the homepage"
+        "title": "Ceci est la page d'accueil"
+    },
+    "nav" : {
+        "home": "Accueil",
+        "link1": "Lien 1",
+        "link2": "Lien 2",
+        "link3": "Lien 3"
     }
 }
