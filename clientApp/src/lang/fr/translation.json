@@ -10,5 +10,8 @@
         "confirm": "Confirmer",
         "delete": "Supprimer",
         "update": "Modifier"
+    },
+    "homepage": {
+        "title": "This is the homepage"
     }
 }
