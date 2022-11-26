@@ -16,7 +16,6 @@ const Bar = styled.div`
     grid-direction: row;
     align-items: center;
     justify-items: flex-end;
-    width: 100%;
     padding: ${spacingS};
     height: ${APP_BAR_HEIGHT};
     color: white;

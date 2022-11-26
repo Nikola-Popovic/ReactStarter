@@ -10,7 +10,6 @@ export const APP_BAR_HEIGHT = '5vh';
 const Bar = styled.div<{isVisible: boolean}>`
     display: flex;
     flex-direction: row;
-    width: 100%;
     padding: ${spacingS};
     height: ${APP_BAR_HEIGHT};
     min-height: 10px;
