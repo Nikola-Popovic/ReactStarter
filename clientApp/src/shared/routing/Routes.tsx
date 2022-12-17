@@ -6,7 +6,7 @@ import {
 
 export const Router = createBrowserRouter([
   {
-    path: '/',
+    path: '',
     element: <Homepage />
   }
 ]);
