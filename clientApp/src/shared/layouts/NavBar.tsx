@@ -4,6 +4,7 @@ import { ColorConstants } from '../styling/ColorConstants';
 import { FONT_FAMILLY, spacingS } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
+import { Link } from 'react-router-dom';
 
 export const APP_BAR_HEIGHT = '5vh';
 
@@ -21,7 +22,7 @@ const Bar = styled.div<{isVisible: boolean}>`
     animation: ${props => props.isVisible ? 'slideIn 1s ease-in-out' : 'slideOut 1s ease-in-out'};
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
     display: block;
     position: relative;
     text-decoration: none;
@@ -62,9 +63,9 @@ export interface INavBarProps {
 export function NavBar(props : INavBarProps) {
   const { t } = useTranslation('translation', { i18n: i18next });
   return <Bar isVisible={props.isVisible}>
-    <NavLink id='home' href='/'> {t('nav.home')} </NavLink>
-    <NavLink id='link1' href='link1'> {t('nav.link1')} </NavLink>
-    <NavLink id='link2' href='link2'> {t('nav.link2')} </NavLink>
-    <NavLink id='link3' href='link3'> {t('nav.link3')} </NavLink>
+    <NavLink id='home' to='/'> {t('nav.home')} </NavLink>
+    <NavLink id='link1' to='/page2'> {t('nav.link1')} </NavLink>
+    <NavLink id='link2' to='/'> {t('nav.link2')} </NavLink>
+    <NavLink id='link3' to='/'> {t('nav.link3')} </NavLink>
   </Bar>;
 }
