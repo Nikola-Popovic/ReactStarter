@@ -11,6 +11,10 @@
         "delete": "Supprimer",
         "update": "Modifier"
     },
+    "login": {
+        "login": "Connexion",
+        "logout": "Déconnexion"
+    },
     "homepage": {
         "title": "Ceci est la page d'accueil"
     },

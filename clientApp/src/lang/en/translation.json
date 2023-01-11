@@ -11,8 +11,14 @@
         "delete": "Delete",
         "update": "Update"
     },
+    "login": {
+        "login": "Log in",
+        "logout": "Log out",
+        "success": "Success"
+    },
     "homepage": {
-        "title": "This is the homepage"
+        "title": "This is the homepage",
+        "intro": "Welcome"
     },
     "nav" : {
         "home": "Home",
