@@ -15,8 +15,8 @@ const LoginLogoutButton = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   const { t } = useTranslation('translation', { i18n: i18next });
 
-  return <StyledButton variant="contained" color="secondary" onClick={() => loginWithRedirect()}>
-    {isAuthenticated ? t('login.logout') : t('login.login')}
+  return <StyledButton variant={isAuthenticated ? 'outlined' : 'contained'} color="secondary" onClick={() => loginWithRedirect()}>
+    {isAuthenticated ? <>{t('login.logout')}</> : <>{t('login.login')}</>}
   </StyledButton>;
 };
 

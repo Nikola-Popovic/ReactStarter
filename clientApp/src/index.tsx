@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import * as dotenv from 'dotenv';
 import './index.css';
 import App from './App';
 import ColorThemeProvider from './shared/theme/ColorTheme';
@@ -17,6 +16,8 @@ root.render(
       domain={domain}
       clientId={clientId}
       redirectUri={redirectUri}
+      cacheLocation={'localstorage'}
+      useRefreshTokens={true}
     >
       <ColorThemeProvider>
         <App />

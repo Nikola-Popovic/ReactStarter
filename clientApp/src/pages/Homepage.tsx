@@ -5,10 +5,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 export function Homepage() {
   const { t } = useTranslation('translation', { i18n: i18next });
-  const { user } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
 
   return <div>
-    {t('homepage.title')}
-    <p> {t('homepage.intro')} {user?.email} </p>
+    {isAuthenticated ? 
+      <p> {t('homepage.intro')} {user?.name} </p>
+      : <p> {t('homepage.pleaseLogIn')} </p>
+    }
   </div>;
 }

@@ -13,10 +13,13 @@
     },
     "login": {
         "login": "Connexion",
-        "logout": "Déconnexion"
+        "logout": "Déconnexion",
+        "loggedInAs": "Connecté en tant que"
     },
     "homepage": {
-        "title": "Ceci est la page d'accueil"
+        "title": "Ceci est la page d'accueil",
+        "pleaseLogIn": "Veuillez vous connecter pour accéder aux fonctionnalités",
+        "intro": "Bienvenue"
     },
     "nav" : {
         "home": "Accueil",
