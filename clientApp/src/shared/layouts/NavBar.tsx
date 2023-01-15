@@ -5,6 +5,7 @@ import { FONT_FAMILLY, spacingS } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 export const APP_BAR_HEIGHT = '5vh';
 
@@ -62,10 +63,16 @@ export interface INavBarProps {
 
 export function NavBar(props : INavBarProps) {
   const { t } = useTranslation('translation', { i18n: i18next });
+  const { isAuthenticated } = useAuth0();
+
   return <Bar isVisible={props.isVisible}>
     <NavLink id='home' to='/'> {t('nav.home')} </NavLink>
-    <NavLink id='link1' to='/page2'> {t('nav.link1')} </NavLink>
-    <NavLink id='link2' to='/'> {t('nav.link2')} </NavLink>
-    <NavLink id='link3' to='/'> {t('nav.link3')} </NavLink>
+    {
+      isAuthenticated && 
+        <>
+          <NavLink id='link1' to='/protectedRoute'> {t('nav.link1')} </NavLink>
+        </>
+    }
+    <NavLink id='link2' to='/unprotectedRoute'> {t('nav.link2')} </NavLink>
   </Bar>;
 }

@@ -4,6 +4,14 @@
         "title": "Amorceur React",
         "subtitle": "par Nikola Popovic "
     },
+    "protectedPage": {
+        "title": "Ceci est une page protégée",
+        "intro": "Vous pouvez accéder à cette page car vous êtes connecté"
+    },
+    "unprotectedPage": {
+        "title": "Ceci est une page non protégée",
+        "intro": "Vous pouvez accéder à cette page sans être connecté"
+    },
     "general": {
         "add": "Ajouter",
         "cancel": "Annuler",
@@ -11,13 +19,19 @@
         "delete": "Supprimer",
         "update": "Modifier"
     },
+    "login": {
+        "login": "Connexion",
+        "logout": "Déconnexion",
+        "loggedInAs": "Connecté en tant que"
+    },
     "homepage": {
-        "title": "Ceci est la page d'accueil"
+        "title": "Ceci est la page d'accueil",
+        "pleaseLogIn": "Veuillez vous connecter pour accéder aux fonctionnalités",
+        "intro": "Bienvenue"
     },
     "nav" : {
         "home": "Accueil",
-        "link1": "Lien 1",
-        "link2": "Lien 2",
-        "link3": "Lien 3"
+        "link1": "Lien protégée",
+        "link2": "Lien non protégée"
     }
 }

@@ -5,6 +5,7 @@ import { FONT_FAMILLY, spacingL, spacingM, spacingS, spacingXXL } from '../styli
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { MenuItem, Select } from '@mui/material';
+import LoginLogoutButton from '../auth/LoginLogoutButton';
 
 export const APP_BAR_COLLAPSE_HEIGHT = '4vh';
 export const APP_BAR_HEIGHT = '5vh';
@@ -93,6 +94,7 @@ export function AppBar() {
       >
         {i18next.languages.map((lang) => <MenuItem key={lang} value={lang}>{lang}</MenuItem>)}
       </MatSelect>
+      <LoginLogoutButton />
     </BarEnd>
   </Bar>;
 }

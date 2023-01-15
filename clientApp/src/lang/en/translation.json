@@ -4,6 +4,14 @@
         "title": "React Starter",
         "subtitle": "by Nikola Popovic "
     },
+    "protectedPage": {
+        "title": "This is a protected page",
+        "intro": "You can only see this page if you are logged in"
+    },
+    "unprotectedPage": {
+        "title": "This is an unprotected page",
+        "intro": "You can see this page even if you are not logged in"
+    },
     "general": {
         "add": "Add",
         "cancel": "Cancel",
@@ -11,13 +19,21 @@
         "delete": "Delete",
         "update": "Update"
     },
+    "login": {
+        "login": "Log in",
+        "loggedInAs": "Logged in as",
+        "logout": "Log out",
+        "success": "Success"
+    },
     "homepage": {
-        "title": "This is the homepage"
+        "title": "This is the homepage",
+        "pleaseLogIn": "Please log in to see the content",
+        "intro": "Welcome"
     },
     "nav" : {
         "home": "Home",
-        "link1": "Link 1",
-        "link2": "Link 2",
+        "link1": "Protected Route",
+        "link2": "Unprotected Route",
         "link3": "Link 3"
     }
 }

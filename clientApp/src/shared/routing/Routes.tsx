@@ -5,13 +5,18 @@ import { AppLayout } from '../layouts/AppLayout';
 import {
   createBrowserRouter, createRoutesFromElements, Route,
 } from 'react-router-dom';
-import { Page2 } from '../../pages/Page2';
+import { ProtectedPage } from '../../pages/ProtectedPage';
+import { LoginCallbackPage } from '../auth/LoginCallbackPage';
+import { ProtectedRoute } from '../auth/ProtectedRoute';
+import { UnprotectedPage } from '../../pages/UnprotectedPage';
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<AppLayout />}>
       <Route path="/" element={<Homepage />} />
-      <Route path="/page2" element={<Page2 />} />
+      <Route path="/protectedRoute" element={<ProtectedRoute> <ProtectedPage /> </ProtectedRoute>} />
+      <Route path="/unprotectedRoute" element={<UnprotectedPage />} />
+      <Route path="/loginCallback" element={<LoginCallbackPage />} />
     </Route>
   )
 );
