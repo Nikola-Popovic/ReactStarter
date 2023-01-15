@@ -12,10 +12,18 @@ const StyledButton = styled(Button)`
 `;
 
 const LoginLogoutButton = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const { t } = useTranslation('translation', { i18n: i18next });
 
-  return <StyledButton variant={isAuthenticated ? 'outlined' : 'contained'} color="secondary" onClick={() => loginWithRedirect()}>
+  const handleLoginLogout = () => {
+    if (isAuthenticated) {
+      logout({ returnTo: window.location.origin });
+    } else {
+      loginWithRedirect();
+    }
+  };
+
+  return <StyledButton variant={isAuthenticated ? 'outlined' : 'contained'} color="secondary" onClick={handleLoginLogout}>
     {isAuthenticated ? <>{t('login.logout')}</> : <>{t('login.login')}</>}
   </StyledButton>;
 };

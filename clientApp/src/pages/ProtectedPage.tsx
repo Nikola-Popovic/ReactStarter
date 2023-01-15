@@ -6,6 +6,6 @@ export function ProtectedPage() {
   const { t } = useTranslation('translation', { i18n: i18next });
 
   return <div>
-    This is a protected page
+    {t('protectedPage.intro')}
   </div>;
 }

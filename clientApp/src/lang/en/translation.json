@@ -4,6 +4,14 @@
         "title": "React Starter",
         "subtitle": "by Nikola Popovic "
     },
+    "protectedPage": {
+        "title": "This is a protected page",
+        "intro": "You can only see this page if you are logged in"
+    },
+    "unprotectedPage": {
+        "title": "This is an unprotected page",
+        "intro": "You can see this page even if you are not logged in"
+    },
     "general": {
         "add": "Add",
         "cancel": "Cancel",
