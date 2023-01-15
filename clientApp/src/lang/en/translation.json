@@ -20,7 +20,7 @@
         "update": "Update"
     },
     "login": {
-        "login": "Log in",
+        "login": "Login",
         "loggedInAs": "Logged in as",
         "logout": "Log out",
         "success": "Success"

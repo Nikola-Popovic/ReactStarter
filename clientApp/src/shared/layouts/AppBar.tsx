@@ -7,8 +7,7 @@ import i18next from '../lang/i18next';
 import { MenuItem, Select } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
 
-export const APP_BAR_COLLAPSE_HEIGHT = '4vh';
-export const APP_BAR_HEIGHT = '5vh';
+export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
 
 const Bar = styled.div`

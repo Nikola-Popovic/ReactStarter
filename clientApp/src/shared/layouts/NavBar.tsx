@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, spacingS } from '../styling/StylingConstants';
+import { FONT_FAMILLY, spacingL, spacingS } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const Bar = styled.div<{isVisible: boolean}>`
     flex-direction: row;
     padding: ${spacingS};
     height: ${APP_BAR_HEIGHT};
-    min-height: 10px;
+    min-height: ${spacingL};
     align-items: center;
     justify-content: center;
     font-family: ${FONT_FAMILLY};
