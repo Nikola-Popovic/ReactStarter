@@ -24,8 +24,8 @@
     },
     "nav" : {
         "home": "Home",
-        "link1": "Link 1",
-        "link2": "Link 2",
+        "link1": "Protected Route",
+        "link2": "Unprotected Route",
         "link3": "Link 3"
     }
 }
