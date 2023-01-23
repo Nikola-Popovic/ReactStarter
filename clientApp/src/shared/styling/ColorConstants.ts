@@ -1,5 +1,6 @@
 export class ColorConstants {
   public static readonly AppBarColor = '#4f5d75';
+  public static readonly White = '#FFFFFF';
   // Primary
   public static readonly Primary = '#2d3142';
   public static readonly PrimaryAlt = '#a2b2be';

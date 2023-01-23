@@ -30,6 +30,11 @@
         "pleaseLogIn": "Please log in to see the content",
         "intro": "Welcome"
     },
+    "sideNav": {
+        "home": "Home",
+        "search": "Search",
+        "profile": "Profile"
+    },
     "nav" : {
         "home": "Home",
         "link1": "Protected Route",

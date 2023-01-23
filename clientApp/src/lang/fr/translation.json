@@ -29,6 +29,11 @@
         "pleaseLogIn": "Veuillez vous connecter pour accéder aux fonctionnalités",
         "intro": "Bienvenue"
     },
+    "sideNav": {
+        "home": "Accueil",
+        "search": "Rechercher",
+        "profile": "Profil"
+    },
     "nav" : {
         "home": "Accueil",
         "link1": "Lien protégée",

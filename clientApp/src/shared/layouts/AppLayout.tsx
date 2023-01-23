@@ -3,6 +3,7 @@ import { AppBar, APP_BAR_HEIGHT } from './AppBar';
 import styled from 'styled-components';
 import { PageContent } from './PageContent';
 import { NavBar } from './NavBar';
+import SideNav from './SideNav';
 
 const AppContainer = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ export function AppLayout() {
   return (
     <div className="App">
       <AppBar></AppBar>
+      <SideNav></SideNav>
       <NavBar isVisible={true}></NavBar>
       <AppContainer>
         <PageContent></PageContent>
