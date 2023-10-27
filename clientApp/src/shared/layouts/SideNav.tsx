@@ -8,19 +8,20 @@ import i18next from '../lang/i18next';
 import { useNavigate  } from 'react-router-dom';
 import { ColorConstants } from '../styling/ColorConstants';
 import { APP_BAR_HEIGHT } from './AppBar';
+import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN } from '../styling/StylingConstants';
 
 const SideNavContainer = styled.div`
   color: white;
   background-color: ${ColorConstants.AppBarColor};
-  width: 150px;
+  width: ${SIDENAV_MAX_WIDTH};
   height: 100%;
   position: fixed;
   top: ${APP_BAR_HEIGHT}};
   left: 0;
   z-index: 1;
   overflow-x: hidden;
-  @media (max-width: 600px) {
-    width: 70px;
+  @media (max-width: ${SMALL_SCREEN}) {
+    width: ${SIDENAV_MIN_WIDTH};
   }
 `;
 
