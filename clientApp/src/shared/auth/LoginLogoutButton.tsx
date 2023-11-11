@@ -9,8 +9,6 @@ import { LogOut } from '@styled-icons/entypo/LogOut';
 
 const StyledButton = styled(Button)`
   font-size: 0.3em;
-  margin: ${spacingS} !important;
-  padding: ${spacingS};
 `;
 
 const StyledLogOut = styled(LogOut)`

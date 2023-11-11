@@ -52,12 +52,13 @@ export interface ISideNavProps {
 }
 
 const SideNav = (props: ISideNavProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  if (!props.isVisible) {
+    return <></>;
+  }
   const navigate = useNavigate();
   const { t } = useTranslation('translation', { i18n: i18next });
 
   const navigateTo = (path: string) => {
-    setIsOpen(false);
     navigate(path);
   };
 

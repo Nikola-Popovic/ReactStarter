@@ -5,7 +5,6 @@ import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN, spacingXL } from '.
 
 const PageLayout = styled.div`
   position: fixed;
-  left: ${SIDENAV_MAX_WIDTH};
   margin: ${spacingXL};
   width: 100%;
   display: flex;

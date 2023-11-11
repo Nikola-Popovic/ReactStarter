@@ -15,7 +15,7 @@ export function AppLayout() {
   return (
     <div className="App">
       <AppBar></AppBar>
-      <SideNav></SideNav>
+      <SideNav isVisible={false}></SideNav>
       <NavBar isVisible={true}></NavBar>
       <AppContainer>
         <PageContent></PageContent>
