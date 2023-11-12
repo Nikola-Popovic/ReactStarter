@@ -3,7 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Button, styled } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
-import { spacingL, spacingS } from '../styling/StylingConstants';
+import { Sizing } from '../styling/StylingConstants';
 import { LogOut } from '@styled-icons/entypo/LogOut';
 
 const StyledButton = styled(Button)`
@@ -11,7 +11,7 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledLogOut = styled(LogOut)`
-  height: ${spacingL};
+  height: ${Sizing.spacingL};
 `;
 
 const LoginLogoutButton = () => {

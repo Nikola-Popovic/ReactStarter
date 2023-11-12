@@ -1,6 +1,6 @@
 import React from 'react';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, spacingL, spacingM, spacingS, spacingXXL } from '../styling/StylingConstants';
+import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { MenuItem, Select, Button, styled } from '@mui/material';
@@ -12,7 +12,7 @@ export const TITLE_WIDTH = '200px';
 const Bar = styled('div')`
   display: flex;
   width: 100%;
-  padding: ${spacingS};
+  padding: ${Sizing.spacingS};
   height: ${APP_BAR_HEIGHT};
   color: white;
   min-height: 10px;
@@ -60,9 +60,9 @@ const SubTitle = styled('div')`
 `;
 
 const MatSelect = styled(Select)`
-  margin: ${spacingS};
+  margin: ${Sizing.spacingS};
   color: white;
-  height: calc(${APP_BAR_HEIGHT} - ${spacingS});
+  height: calc(${APP_BAR_HEIGHT} - ${Sizing.spacingS});
   & .MuiSelect-icon,
   & .MuiInputBase-input {
     color: white;

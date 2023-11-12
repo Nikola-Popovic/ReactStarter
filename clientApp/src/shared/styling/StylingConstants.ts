@@ -1,26 +1,28 @@
 export const FONT_FAMILLY = 'Lucida Fax Regular';
 
-export const SMALL_SCREEN = '600px';
-export const MEDIUM_SCREEN = '960px';
-export const LARGE_SCREEN = '1280px';
-
 // À voir si on garde
 export const SIDENAV_MIN_WIDTH = '70px';
 export const SIDENAV_MAX_WIDTH = '150px';
 
-// Fibonnaci Sequence : 1, 2, 3, 5, 8, 13, 21, 34, 55,
-export const contentXs = '3vh';
-export const contentS = '5vh';
-export const contentSm = '8vh';
-export const contentM = '13vh';
-export const contentL = '21vh';
-export const contentXL = '34vh';
-export const contentXXL = '55vh';
+export class Sizing {
+  static readonly smallScreen = '600px';
+  static readonly mediumScreen = '960px';
+  static readonly largeScreen = '1280px';
 
-export const spacingXs = '3px';
-export const spacingS = '5px';
-export const spacingSm = '8px';
-export const spacingM = '13px';
-export const spacingL = '21px';
-export const spacingXL = '34px';
-export const spacingXXL = '55px';
+  // Fibonnaci Sequence : 1, 2, 3, 5, 8, 13, 21, 34, 55,
+  static readonly contentXs = '3vh';
+  static readonly contentS = '5vh';
+  static readonly contentSm = '8vh';
+  static readonly contentM = '13vh';
+  static readonly contentL = '21vh';
+  static readonly contentXL = '34vh';
+  static readonly contentXXL = '55vh';
+
+  static readonly spacingXs = '3px';
+  static readonly spacingS = '5px';
+  static readonly spacingSm = '8px';
+  static readonly spacingM = '13px';
+  static readonly spacingL = '21px';
+  static readonly spacingXL = '34px';
+  static readonly spacingXXL = '55px';
+}

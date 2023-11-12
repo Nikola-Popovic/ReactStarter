@@ -1,6 +1,6 @@
 import React from 'react';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, spacingL, spacingS } from '../styling/StylingConstants';
+import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { Link } from 'react-router-dom';
@@ -12,9 +12,9 @@ export const APP_BAR_HEIGHT = '5vh';
 const Bar = styled('div')<{isVisible: boolean}>`
     display: flex;
     flex-direction: row;
-    padding: ${spacingS};
+    padding: ${Sizing.spacingS};
     height: ${APP_BAR_HEIGHT};
-    min-height: ${spacingL};
+    min-height: ${Sizing.spacingL};
     align-items: center;
     justify-content: center;
     font-family: ${FONT_FAMILLY};
@@ -28,8 +28,8 @@ const NavLink = styled(Link)`
     position: relative;
     text-decoration: none;
     opacity: 0.6;
-    padding: ${spacingS};
-    margin: ${spacingS};
+    padding: ${Sizing.spacingS};
+    margin: ${Sizing.spacingS};
     color: ${ColorConstants.PrimaryAccent};
     color: white;
     font-size: 1.2em;
