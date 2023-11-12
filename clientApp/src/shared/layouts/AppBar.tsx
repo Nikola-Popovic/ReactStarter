@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { MenuItem, Select, Button, styled } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
+import { SkolaSelect } from '../components/SkolaSelect';
 
 export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
@@ -24,7 +25,6 @@ const Bar = styled('div')`
 const BoxStart = styled('div')`
   display: flex;
   position: fixed;
-  background-color: blue;
   z-index: 200;
   height: inherit;
 `;
@@ -35,14 +35,12 @@ const BoxCenter = styled('div')`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: red;
   z-index: 0;
 `;
 
 const BoxEnd = styled('div')`
   position: fixed;
   right: 0px;
-  background-color: green;
   height: inherit;
   z-index: 100;
 `;
@@ -59,8 +57,7 @@ const SubTitle = styled('div')`
   font-size: 0.8em;
 `;
 
-const MatSelect = styled(Select)`
-  margin: ${Sizing.spacingS};
+const StyledSelect = styled(SkolaSelect)`
   color: white;
   height: calc(${APP_BAR_HEIGHT} - ${Sizing.spacingS});
   & .MuiSelect-icon,
@@ -95,15 +92,14 @@ export function AppBar() {
       </SubTitle>
     </BoxCenter>
     <BoxEnd>
-      <MatSelect
+      <StyledSelect
         id="language-select"
         value={lang}
-        color="secondary"
         displayEmpty
         onChange={(e) => handleLangChange(e as React.ChangeEvent<{ value: string }>)}
       >
         {i18next.languages.map((lang) => <MenuItem key={lang} value={lang}>{lang}</MenuItem>)}
-      </MatSelect>
+      </StyledSelect>
       <LoginLogoutButton />
     </BoxEnd>
   </Bar>;
