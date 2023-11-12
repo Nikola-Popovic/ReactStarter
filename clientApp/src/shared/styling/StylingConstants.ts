@@ -18,11 +18,11 @@ export class Sizing {
   static readonly contentXL = '34vh';
   static readonly contentXXL = '55vh';
 
-  static readonly spacingXs = '3px';
-  static readonly spacingS = '5px';
-  static readonly spacingSm = '8px';
-  static readonly spacingM = '13px';
-  static readonly spacingL = '21px';
-  static readonly spacingXL = '34px';
-  static readonly spacingXXL = '55px';
+  static readonly fixedXs = '3px';
+  static readonly fixedS = '5px';
+  static readonly fixedSm = '8px';
+  static readonly fixedM = '13px';
+  static readonly fixedL = '21px';
+  static readonly fixedXL = '34px';
+  static readonly fixedXXL = '55px';
 }

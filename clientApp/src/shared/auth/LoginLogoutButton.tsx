@@ -8,7 +8,7 @@ import { LogOut } from '@styled-icons/entypo/LogOut';
 import { SkolaButton } from '../components/SkolaButton';
 
 const StyledLogOut = styled(LogOut)`
-  height: ${Sizing.spacingL};
+  height: ${Sizing.fixedL};
 `;
 
 const LoginLogoutButton = () => {

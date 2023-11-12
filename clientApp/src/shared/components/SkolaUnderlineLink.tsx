@@ -14,8 +14,8 @@ const StyledLink = styled(Link)<{color?: string}>`
     position: relative;
     text-decoration: none;
     opacity: 0.6;
-    padding: ${Sizing.spacingS};
-    margin: ${Sizing.spacingS};
+    padding: ${Sizing.fixedS};
+    margin: ${Sizing.fixedS};
     color: ${props => props.color ?? ColorConstants.Primary};
     font-size: 1.2em;
     overflow: hidden;

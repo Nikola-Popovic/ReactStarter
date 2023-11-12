@@ -12,9 +12,9 @@ export const APP_BAR_HEIGHT = '5vh';
 const Bar = styled('div')<{isVisible: boolean}>`
   display: flex;
   flex-direction: row;
-  padding: ${Sizing.spacingS};
+  padding: ${Sizing.fixedS};
   height: ${APP_BAR_HEIGHT};
-  min-height: ${Sizing.spacingL};
+  min-height: ${Sizing.fixedL};
   align-items: center;
   justify-content: center;
   font-family: ${FONT_FAMILLY};

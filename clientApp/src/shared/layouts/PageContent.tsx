@@ -5,7 +5,7 @@ import { styled } from '@mui/material';
 
 const PageLayout = styled('div')`
   position: fixed;
-  margin: ${Sizing.spacingXL};
+  margin: ${Sizing.fixedXL};
   width: 100%;
   display: flex;
   flex-direction: column;

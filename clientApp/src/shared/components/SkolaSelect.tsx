@@ -6,7 +6,7 @@ type SkolaSelectProps = SelectProps;
 
 
 const StyledSelect = styled(Select)`
-  margin: 0 ${Sizing.spacingS};
+  margin: 0 ${Sizing.fixedS};
 `;
 
 export const SkolaSelect = (props: SkolaSelectProps) => {

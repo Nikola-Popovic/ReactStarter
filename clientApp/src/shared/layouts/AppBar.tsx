@@ -1,49 +1,15 @@
 import React from 'react';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
+import { Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
-import { MenuItem, Select, Button, styled } from '@mui/material';
+import { MenuItem, Button, styled } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
 import { SkolaSelect } from '../components/SkolaSelect';
+import { SkolaBox } from '../components/SkolaBox';
 
 export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
-
-const Bar = styled('div')`
-  display: flex;
-  width: 100%;
-  padding: ${Sizing.spacingS};
-  height: ${APP_BAR_HEIGHT};
-  color: white;
-  min-height: 10px;
-  font-family: ${FONT_FAMILLY};
-  background-color: ${ColorConstants.AppBarColor};
-  height: ${APP_BAR_HEIGHT};
-`;
-
-const BoxStart = styled('div')`
-  display: flex;
-  position: fixed;
-  z-index: 200;
-  height: inherit;
-`;
-
-const BoxCenter = styled('div')`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  z-index: 0;
-`;
-
-const BoxEnd = styled('div')`
-  position: fixed;
-  right: 0px;
-  height: inherit;
-  z-index: 100;
-`;
 
 const AppTitle = styled('div')`
   color: ${ColorConstants.PrimaryAccent};
@@ -59,7 +25,7 @@ const SubTitle = styled('div')`
 
 const StyledSelect = styled(SkolaSelect)`
   color: white;
-  height: calc(${APP_BAR_HEIGHT} - ${Sizing.spacingS});
+  height: calc(${Sizing.fixedXXL} - ${Sizing.fixedS});
   & .MuiSelect-icon,
   & .MuiInputBase-input {
     color: white;
@@ -79,19 +45,11 @@ export function AppBar() {
     i18next.changeLanguage(event.target.value);
   };
 
-  return <Bar>
-    <BoxStart>
+  return <SkolaBox
+    startItem={<>
       <Button> Helo </Button>
-    </BoxStart>
-    <BoxCenter>
-      <AppTitle>
-        {t('appBar.title')}
-      </AppTitle>
-      <SubTitle>
-        {t('appBar.subtitle')}
-      </SubTitle>
-    </BoxCenter>
-    <BoxEnd>
+    </>}
+    endItem={<>
       <StyledSelect
         id="language-select"
         value={lang}
@@ -101,6 +59,14 @@ export function AppBar() {
         {i18next.languages.map((lang) => <MenuItem key={lang} value={lang}>{lang}</MenuItem>)}
       </StyledSelect>
       <LoginLogoutButton />
-    </BoxEnd>
-  </Bar>;
+    </>}>
+    <div>
+      <AppTitle>
+        {t('appBar.title')}
+      </AppTitle>
+      <SubTitle>
+        {t('appBar.subtitle')}
+      </SubTitle>
+    </div>
+  </SkolaBox>;
 }
