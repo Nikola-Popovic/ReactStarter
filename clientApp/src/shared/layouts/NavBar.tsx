@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ColorConstants } from '../styling/ColorConstants';
 import { FONT_FAMILLY, spacingL, spacingS } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import { styled } from '@mui/material';
 
 export const APP_BAR_HEIGHT = '5vh';
 
-const Bar = styled.div<{isVisible: boolean}>`
+const Bar = styled('div')<{isVisible: boolean}>`
     display: flex;
     flex-direction: row;
     padding: ${spacingS};

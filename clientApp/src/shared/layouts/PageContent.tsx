@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
 import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN, spacingXL } from '../styling/StylingConstants';
+import { styled } from '@mui/material';
 
-const PageLayout = styled.div`
+const PageLayout = styled('div')`
   position: fixed;
   margin: ${spacingXL};
   width: 100%;

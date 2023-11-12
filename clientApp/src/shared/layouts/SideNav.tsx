@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { HomeAlt } from '@styled-icons/boxicons-regular/HomeAlt';
 import { SearchAlt } from '@styled-icons/boxicons-regular/SearchAlt';
 import { Profile } from '@styled-icons/remix-line/Profile';
@@ -9,8 +8,9 @@ import { useNavigate  } from 'react-router-dom';
 import { ColorConstants } from '../styling/ColorConstants';
 import { APP_BAR_HEIGHT } from './AppBar';
 import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN } from '../styling/StylingConstants';
+import { styled } from '@mui/material';
 
-const SideNavContainer = styled.div`
+const SideNavContainer = styled('div')`
   color: white;
   background-color: ${ColorConstants.AppBarColor};
   width: ${SIDENAV_MAX_WIDTH};
@@ -25,7 +25,7 @@ const SideNavContainer = styled.div`
   }
 `;
 
-const NavItem = styled.div`
+const NavItem = styled('div')`
   display: flex;
   padding: 20px;
   font-size: 18px;

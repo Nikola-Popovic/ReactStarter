@@ -1,9 +1,8 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button } from '@mui/material';
+import { Button, styled } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
-import styled from 'styled-components';
 import { spacingL, spacingS } from '../styling/StylingConstants';
 import { LogOut } from '@styled-icons/entypo/LogOut';
 

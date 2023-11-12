@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ColorConstants } from '../styling/ColorConstants';
 import { FONT_FAMILLY, spacingL, spacingM, spacingS, spacingXXL } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
 import i18next from '../lang/i18next';
-import { MenuItem, Select, Button } from '@mui/material';
+import { MenuItem, Select, Button, styled } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
 
 export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
 
-const Bar = styled.div`
+const Bar = styled('div')`
   display: flex;
   width: 100%;
   padding: ${spacingS};
@@ -22,7 +21,7 @@ const Bar = styled.div`
   height: ${APP_BAR_HEIGHT};
 `;
 
-const BoxStart = styled.div`
+const BoxStart = styled('div')`
   display: flex;
   position: fixed;
   background-color: blue;
@@ -30,7 +29,7 @@ const BoxStart = styled.div`
   height: inherit;
 `;
 
-const BoxCenter = styled.div`
+const BoxCenter = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +39,7 @@ const BoxCenter = styled.div`
   z-index: 0;
 `;
 
-const BoxEnd = styled.div`
+const BoxEnd = styled('div')`
   position: fixed;
   right: 0px;
   background-color: green;
@@ -48,14 +47,14 @@ const BoxEnd = styled.div`
   z-index: 100;
 `;
 
-const AppTitle = styled.div`
+const AppTitle = styled('div')`
   color: ${ColorConstants.PrimaryAccent};
   padding-left: 1vw;
   padding-right: 1vw;
   font-size: 1em;
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled('div')`
   opacity: 0.8;
   font-size: 0.8em;
 `;
