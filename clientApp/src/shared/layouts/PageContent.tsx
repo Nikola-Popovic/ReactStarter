@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
-import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN, spacingXL } from '../styling/StylingConstants';
+import { SIDENAV_MIN_WIDTH, Sizing } from '../styling/StylingConstants';
+import { styled } from '@mui/material';
 
-const PageLayout = styled.div`
+const PageLayout = styled('div')`
   position: fixed;
-  left: ${SIDENAV_MAX_WIDTH};
-  margin: ${spacingXL};
+  margin: ${Sizing.fixedXL};
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media (max-width: ${SMALL_SCREEN}) {
+  @media (max-width: ${Sizing.smallScreen}) {
     left: ${SIDENAV_MIN_WIDTH};
   }
 `;

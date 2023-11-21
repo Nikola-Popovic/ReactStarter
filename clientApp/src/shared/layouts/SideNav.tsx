@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { HomeAlt } from '@styled-icons/boxicons-regular/HomeAlt';
 import { SearchAlt } from '@styled-icons/boxicons-regular/SearchAlt';
 import { Profile } from '@styled-icons/remix-line/Profile';
@@ -8,9 +7,10 @@ import i18next from '../lang/i18next';
 import { useNavigate  } from 'react-router-dom';
 import { ColorConstants } from '../styling/ColorConstants';
 import { APP_BAR_HEIGHT } from './AppBar';
-import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, SMALL_SCREEN } from '../styling/StylingConstants';
+import { SIDENAV_MAX_WIDTH, SIDENAV_MIN_WIDTH, Sizing } from '../styling/StylingConstants';
+import { styled } from '@mui/material';
 
-const SideNavContainer = styled.div`
+const SideNavContainer = styled('div')`
   color: white;
   background-color: ${ColorConstants.AppBarColor};
   width: ${SIDENAV_MAX_WIDTH};
@@ -20,12 +20,12 @@ const SideNavContainer = styled.div`
   left: 0;
   z-index: 1;
   overflow-x: hidden;
-  @media (max-width: ${SMALL_SCREEN}) {
+  @media (max-width: ${Sizing.smallScreen}) {
     width: ${SIDENAV_MIN_WIDTH};
   }
 `;
 
-const NavItem = styled.div`
+const NavItem = styled('div')`
   display: flex;
   padding: 20px;
   font-size: 18px;
@@ -52,12 +52,13 @@ export interface ISideNavProps {
 }
 
 const SideNav = (props: ISideNavProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  if (!props.isVisible) {
+    return <></>;
+  }
   const navigate = useNavigate();
   const { t } = useTranslation('translation', { i18n: i18next });
 
   const navigateTo = (path: string) => {
-    setIsOpen(false);
     navigate(path);
   };
 
