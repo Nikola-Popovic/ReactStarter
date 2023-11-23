@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './shared/lang/i18next.config';
 import App from './App';
 import ColorThemeProvider from './shared/theme/ColorTheme';
 import { Auth0Provider } from '@auth0/auth0-react';
