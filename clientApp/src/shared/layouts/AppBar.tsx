@@ -2,11 +2,11 @@ import React from 'react';
 import { ColorConstants } from '../styling/ColorConstants';
 import { Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
-import i18next from '../lang/i18next';
 import { MenuItem, Button, styled } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
 import { SkolaSelect } from '../components/SkolaSelect';
 import { SkolaBox } from '../components/SkolaBox';
+import i18next from 'i18next';
 
 export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
@@ -37,7 +37,7 @@ const StyledSelect = styled(SkolaSelect)`
 `;
 
 export function AppBar() {
-  const { t } = useTranslation('translation', { i18n: i18next });
+  const { t } = useTranslation(['translation']);
   const [lang, setLang] = React.useState(i18next.language);
 
   const handleLangChange = (event: React.ChangeEvent<{ value: string }>) => {

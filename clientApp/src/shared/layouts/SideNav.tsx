@@ -3,7 +3,6 @@ import { HomeAlt } from '@styled-icons/boxicons-regular/HomeAlt';
 import { SearchAlt } from '@styled-icons/boxicons-regular/SearchAlt';
 import { Profile } from '@styled-icons/remix-line/Profile';
 import { useTranslation } from 'react-i18next';
-import i18next from '../lang/i18next';
 import { useNavigate  } from 'react-router-dom';
 import { ColorConstants } from '../styling/ColorConstants';
 import { APP_BAR_HEIGHT } from './AppBar';
@@ -56,7 +55,7 @@ const SideNav = (props: ISideNavProps) => {
     return <></>;
   }
   const navigate = useNavigate();
-  const { t } = useTranslation('translation', { i18n: i18next });
+  const { t } = useTranslation(['translation']);
 
   const navigateTo = (path: string) => {
     navigate(path);

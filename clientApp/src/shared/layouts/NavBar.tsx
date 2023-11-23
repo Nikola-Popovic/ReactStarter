@@ -2,7 +2,6 @@ import React from 'react';
 import { ColorConstants } from '../styling/ColorConstants';
 import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
-import i18next from '../lang/i18next';
 import { useAuth0 } from '@auth0/auth0-react';
 import { styled } from '@mui/material';
 import { SkolaUnderlineLink } from '../components/SkolaUnderlineLink';
@@ -28,7 +27,7 @@ export interface INavBarProps {
 }
 
 export function NavBar(props : INavBarProps) {
-  const { t } = useTranslation('translation', { i18n: i18next });
+  const { t } = useTranslation(['translation']);
   const { isAuthenticated } = useAuth0();
 
   return <Bar isVisible={props.isVisible}>
