@@ -1,78 +1,43 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, spacingL, spacingS } from '../styling/StylingConstants';
+import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
-import i18next from '../lang/i18next';
-import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import { styled } from '@mui/material';
+import { SkolaUnderlineLink } from '../components/SkolaUnderlineLink';
 
 export const APP_BAR_HEIGHT = '5vh';
 
-const Bar = styled.div<{isVisible: boolean}>`
-    display: flex;
-    flex-direction: row;
-    padding: ${spacingS};
-    height: ${APP_BAR_HEIGHT};
-    min-height: ${spacingL};
-    align-items: center;
-    justify-content: center;
-    font-family: ${FONT_FAMILLY};
-    background-color: ${ColorConstants.PrimaryAccent};
-    visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
-    animation: ${props => props.isVisible ? 'slideIn 1s ease-in-out' : 'slideOut 1s ease-in-out'};
-`;
-
-const NavLink = styled(Link)`
-    display: block;
-    position: relative;
-    text-decoration: none;
-    opacity: 0.6;
-    padding: ${spacingS};
-    margin: ${spacingS};
-    color: ${ColorConstants.PrimaryAccent};
-    color: white;
-    font-size: 1.2em;
-    overflow: hidden;
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
-    &::after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 0.1em;
-        bottom: 0;
-        left: 0;
-        background-color: ${ColorConstants.PrimaryAccent};
-        background-color: white;
-        opacity: 1;
-        transition: opacity 300ms, transform 300ms;
-        transform: translate3d(-100%, 0, 0);
-    }
-    &:hover::after,
-    &:focus::after {
-        transform: translate3d(0, 0, 0);
-    }
+const Bar = styled('div')<{isVisible: boolean}>`
+  display: flex;
+  flex-direction: row;
+  padding: ${Sizing.fixedS};
+  height: ${APP_BAR_HEIGHT};
+  min-height: ${Sizing.fixedL};
+  align-items: center;
+  justify-content: center;
+  font-family: ${FONT_FAMILLY};
+  background-color: ${ColorConstants.PrimaryAccent};
+  visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
+  animation: ${props => props.isVisible ? 'slideIn 1s ease-in-out' : 'slideOut 1s ease-in-out'};
 `;
 
 export interface INavBarProps {
-    isVisible: boolean;
+  isVisible: boolean;
 }
 
 export function NavBar(props : INavBarProps) {
-  const { t } = useTranslation('translation', { i18n: i18next });
+  const { t } = useTranslation(['translation']);
   const { isAuthenticated } = useAuth0();
 
   return <Bar isVisible={props.isVisible}>
-    <NavLink id='home' to='/'> {t('nav.home')} </NavLink>
+    <SkolaUnderlineLink color='white' id='home' to='/'> {t('nav.home')} </SkolaUnderlineLink>
     {
       isAuthenticated && 
         <>
-          <NavLink id='link1' to='/protectedRoute'> {t('nav.link1')} </NavLink>
+          <SkolaUnderlineLink color='white'  id='link1' to='/protectedRoute'> {t('nav.link1')} </SkolaUnderlineLink>
         </>
     }
-    <NavLink id='link2' to='/unprotectedRoute'> {t('nav.link2')} </NavLink>
+    <SkolaUnderlineLink color='white' id='link2' to='/unprotectedRoute'> {t('nav.link2')} </SkolaUnderlineLink>
   </Bar>;
 }

@@ -1,60 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, spacingL, spacingM, spacingS, spacingXXL } from '../styling/StylingConstants';
+import { Sizing } from '../styling/StylingConstants';
 import { useTranslation } from 'react-i18next';
-import i18next from '../lang/i18next';
-import { MenuItem, Select } from '@mui/material';
+import { MenuItem, Button, styled } from '@mui/material';
 import LoginLogoutButton from '../auth/LoginLogoutButton';
+import { SkolaSelect } from '../components/SkolaSelect';
+import { SkolaBox } from '../components/SkolaBox';
+import i18next from 'i18next';
 
 export const APP_BAR_HEIGHT = '50px';
 export const TITLE_WIDTH = '200px';
 
-const Bar = styled.div`
-    display: grid;
-    grid-template-columns: calc(50% + ${TITLE_WIDTH}/2) 1fr;
-    grid-direction: row;
-    align-items: center;
-    justify-items: flex-end;
-    padding: ${spacingS};
-    height: ${APP_BAR_HEIGHT};
-    color: white;
-    min-height: 10px;
-    font-family: ${FONT_FAMILLY};
-    background-color: ${ColorConstants.AppBarColor};
-    height: ${APP_BAR_HEIGHT};
-`;
-
-const BarTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: ${TITLE_WIDTH};
-`;
-
-const AppTitle = styled.div`
+const AppTitle = styled('div')`
   color: ${ColorConstants.PrimaryAccent};
   padding-left: 1vw;
   padding-right: 1vw;
   font-size: 1em;
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled('div')`
   opacity: 0.8;
   font-size: 0.8em;
 `;
 
-const BarEnd = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-right: ${spacingXXL};
-`;
-
-const MatSelect = styled(Select)`
-  margin: ${spacingS};
+const StyledSelect = styled(SkolaSelect)`
   color: white;
-  height: calc(${APP_BAR_HEIGHT} - ${spacingS});
+  height: calc(${Sizing.fixedXXL} - ${Sizing.fixedS});
   & .MuiSelect-icon,
   & .MuiInputBase-input {
     color: white;
@@ -66,7 +37,7 @@ const MatSelect = styled(Select)`
 `;
 
 export function AppBar() {
-  const { t } = useTranslation('translation', { i18n: i18next });
+  const { t } = useTranslation(['translation']);
   const [lang, setLang] = React.useState(i18next.language);
 
   const handleLangChange = (event: React.ChangeEvent<{ value: string }>) => {
@@ -74,26 +45,28 @@ export function AppBar() {
     i18next.changeLanguage(event.target.value);
   };
 
-  return <Bar>
-    <BarTitle>
+  return <SkolaBox
+    startItem={<>
+      <Button> Helo </Button>
+    </>}
+    endItem={<>
+      <StyledSelect
+        id="language-select"
+        value={lang}
+        displayEmpty
+        onChange={(e) => handleLangChange(e as React.ChangeEvent<{ value: string }>)}
+      >
+        {i18next.languages.map((lang) => <MenuItem key={lang} value={lang}>{lang}</MenuItem>)}
+      </StyledSelect>
+      <LoginLogoutButton />
+    </>}>
+    <div>
       <AppTitle>
         {t('appBar.title')}
       </AppTitle>
       <SubTitle>
         {t('appBar.subtitle')}
       </SubTitle>
-    </BarTitle>
-    <BarEnd>
-      <MatSelect
-        id="language-select"
-        value={lang}
-        color="secondary"
-        displayEmpty
-        onChange={(e) => handleLangChange(e as React.ChangeEvent<{ value: string }>)}
-      >
-        {i18next.languages.map((lang) => <MenuItem key={lang} value={lang}>{lang}</MenuItem>)}
-      </MatSelect>
-      <LoginLogoutButton />
-    </BarEnd>
-  </Bar>;
+    </div>
+  </SkolaBox>;
 }
