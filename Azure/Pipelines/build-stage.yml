@@ -1,0 +1,57 @@
+parameters:
+  - name: artifactName
+    type: string
+
+stages:
+  - stage: BuildPackage
+    displayName: "Build"
+    jobs:
+      - job: CopyFiles
+        pool: 
+          vmImage: "windows-latest"
+        displayName: "Copy files"
+        steps:
+          - checkout: self
+          
+          - task: NodeTool@0
+            inputs:
+              versionSource: 'spec'
+              versionSpec: '16.x'
+
+          - task: Cache@2
+            displayName: Cache node_modules
+            inputs:
+              key: 'npm | "$(Agent.OS)" | $(Build.SourcesDirectory)/clientApp/package-lock.json'
+              path: $(Build.SourcesDirectory)/clientApp/node_modules
+              cacheHitVar: CACHE_RESTORED
+
+          - task: Npm@1
+            displayName: "Install the dependencies"
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: "ci"
+              workingDir: $(Build.SourcesDirectory)/clientApp
+            condition: and(succeeded(), ne(variables.CACHE_RESTORED, 'true'))
+
+          - script: npm run build
+            displayName: "Build"
+            workingDirectory: $(Build.SourcesDirectory)/clientApp
+            
+          - task: CopyFiles@2
+            displayName: "Copy Bicep File"
+            inputs:
+              sourceFolder: "$(Build.SourcesDirectory)/Azure/Infra-as-code"
+              Contents: "**/*"
+              targetFolder: "$(Build.ArtifactStagingDirectory)/bicep"
+ 
+          - task: CopyFiles@2
+            displayName: "Copy SPA Files"
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)/clientApp/dist
+              Contents: "**/*"
+              TargetFolder: "$(Build.ArtifactStagingDirectory)/clientApp"
+
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: ${{ parameters.artifactName }}
+            displayName: "Publish Artifacts"

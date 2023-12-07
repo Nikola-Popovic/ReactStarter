@@ -1,0 +1,42 @@
+name: "$(SourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)"
+
+trigger:
+  branches:
+    include:
+      - main
+  tags:
+    include:
+      - prod-*
+  paths:
+    include:
+      - Azure/Infra-as-code/*
+      - Azure/Pipelines/*
+      - clientApp/*
+
+variables:
+  - group: Starter-Common
+  - name: artifactName
+    value: "client"
+  - ${{ if and(eq(variables['BUILD_ENV'], ''), startsWith(variables['build.sourceBranch'], 'refs/tags/')) }}:
+      - name: BUILD_ENV
+        value: "prd"
+      - group: Starter-Prod
+
+  - ${{ if eq(variables['BUILD_ENV'], '') }}:
+      - name: BUILD_ENV
+        value: "dev"
+      - group: Starter-Dev
+
+stages:
+  - template: "/Azure/Pipelines/build-stage.yml"
+    parameters:
+      artifactName: ${{ variables.artifactName }}
+
+  - template: "/Azure/Pipelines/deploy-stage.yml"
+    parameters:
+      name: "StarterInfraDev"
+      displayName: "Create Starter Infra Dev"
+      artifactName: ${{ variables.artifactName }}
+      environment: ${{ variables.BUILD_ENV }}
+      condition: "true"
+  
