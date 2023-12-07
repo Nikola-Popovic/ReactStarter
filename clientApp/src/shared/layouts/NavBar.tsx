@@ -1,10 +1,9 @@
-import React from 'react';
-import { ColorConstants } from '../styling/ColorConstants';
-import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
-import { useTranslation } from 'react-i18next';
 import { useAuth0 } from '@auth0/auth0-react';
 import { styled } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { SkolaUnderlineLink } from '../components/SkolaUnderlineLink';
+import { ColorConstants } from '../styling/ColorConstants';
+import { FONT_FAMILLY, Sizing } from '../styling/StylingConstants';
 
 export const APP_BAR_HEIGHT = '5vh';
 
@@ -29,6 +28,10 @@ export interface INavBarProps {
 export function NavBar(props : INavBarProps) {
   const { t } = useTranslation(['translation']);
   const { isAuthenticated } = useAuth0();
+
+  if (!props.isVisible) {
+    return <></>;
+  }
 
   return <Bar isVisible={props.isVisible}>
     <SkolaUnderlineLink color='white' id='home' to='/'> {t('nav.home')} </SkolaUnderlineLink>
