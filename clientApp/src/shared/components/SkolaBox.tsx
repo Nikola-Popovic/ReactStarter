@@ -5,7 +5,6 @@ import { ColorConstants } from '../styling/ColorConstants';
 
 const Box = styled('div')`
   display: flex;
-  width: 100%;
   padding: ${Sizing.fixedS};
   color: white;
   font-family: ${FONT_FAMILLY};
