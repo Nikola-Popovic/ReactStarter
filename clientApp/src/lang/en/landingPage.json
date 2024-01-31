@@ -1,0 +1,34 @@
+{
+    "header": {
+        "title": "React starter",
+        "primaryButton": "Enter app",
+        "secondaryButton": "Subscribe"
+    },
+    "heroSection" : {
+        "title": "Helping dev starting projects",
+        "subtitle": "Discover a world of engaging application.",
+        "primaryButton": "Enter app",
+        "secondaryButton": "Subscribe"
+    },
+    "featureSection": {
+        "title": "Try New React Application",
+        "subtitle": "Explore our demo application and discover new ideas for your development.",
+        "primaryButton": "Try",
+        "secondaryButton": "Subscribe"
+    },
+    "footerSection": {
+        "title": "React starter",
+        "copyRights": "© 2024 Nikla Popovic. All rights reserved.",
+        "newsletterCa": "Join our newsletter",
+        "newsletterPlaceholder": "Enter your email address",
+        "subscribe": "Subscribe"
+    },
+    "informationSection": {
+        "title" : "Information Section"
+    },
+    "newsLetterSection": {
+        "title": "Stay Updated ",
+        "newsletterPlaceholder": "Enter your email address",
+        "action": "Subscribe"
+    }
+}

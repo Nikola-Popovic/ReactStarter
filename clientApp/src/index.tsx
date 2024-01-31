@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './shared/lang/i18next.config';
@@ -6,6 +6,7 @@ import App from './App';
 import ColorThemeProvider from './shared/theme/ColorTheme';
 import { Auth0Provider } from '@auth0/auth0-react';
 import GlobalServices from './shared/services/GlobalServices';
+import { CircularProgress } from '@mui/material';
 
 const domain = import.meta.env.VITE_AUTH0_DOMAIN;
 const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
@@ -23,7 +24,9 @@ root.render(
     >
       <ColorThemeProvider>
         <GlobalServices>
-          <App />
+          <Suspense fallback={<CircularProgress />}>
+            <App />
+          </Suspense>
         </GlobalServices>
       </ColorThemeProvider>
     </Auth0Provider>
